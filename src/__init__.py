@@ -1,0 +1,2 @@
+"""StockPredictor source package."""
+

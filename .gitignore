@@ -1,0 +1,10 @@
+data/
+artifacts/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.streamlit/
+*.ipynb_checkpoints
+
