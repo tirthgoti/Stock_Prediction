@@ -1,0 +1,4 @@
+Ticker,Model,RandomRuns,MatchedTrades,MatchedExposurePct,RandomMeanReturn,RandomStdReturn,RandomMinReturn,RandomMaxReturn,StrategyReturnPercentile
+AAPL,ZeroReturn,1000,0,0.0,0.0,0.0,0.0,0.0,100.0
+MSFT,ZeroReturn,1000,0,0.0,0.0,0.0,0.0,0.0,100.0
+RELIANCE.NS,GRU,1000,31,55.893536121673,-0.06384876722791685,0.10393172484254543,-0.3739874251206229,0.2647736524290323,100.0

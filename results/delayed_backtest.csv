@@ -1,0 +1,4 @@
+Ticker,Model,strategy_total_return,strategy_sharpe_ratio,strategy_max_drawdown,trade_count,market_exposure_pct,buy_and_hold_total_return,buy_and_hold_sharpe_ratio,buy_and_hold_max_drawdown
+AAPL,ZeroReturn,0.0,0.0,0.0,0.0,0.0,0.3558245001682254,1.294024893053619,-0.1382298375943214
+MSFT,ZeroReturn,0.0,0.0,0.0,0.0,0.0,0.012015670635103337,0.19720580651605288,-0.3491062375616114
+RELIANCE.NS,GRU,0.09692710093785162,0.539932396519192,-0.12642273124791503,31.0,55.51330798479087,-0.0866512772192759,-0.2471657881826761,-0.27275013220514344

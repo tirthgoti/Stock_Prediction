@@ -5,7 +5,7 @@ from torch import nn
 
 
 class RecurrentModel(nn.Module):
-    """LSTM/GRU model that predicts price and direction from the last state."""
+    """LSTM/GRU model that predicts return and direction from the last state."""
 
     def __init__(
         self, input_size: int, hidden_size: int, num_layers: int, dropout: float, kind: str
@@ -17,14 +17,14 @@ class RecurrentModel(nn.Module):
             dropout=dropout if num_layers > 1 else 0.0,
         )
         self.dropout = nn.Dropout(dropout)
-        self.price_head = nn.Linear(hidden_size, 1)
+        self.return_head = nn.Linear(hidden_size, 1)
         self.direction_head = nn.Linear(hidden_size, 1)
 
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        """Return next-close regression and direction logits."""
+        """Return next-log-return regression and direction logits."""
         output, _ = self.encoder(x)
         state = self.dropout(output[:, -1, :])
-        return self.price_head(state).squeeze(-1), self.direction_head(state).squeeze(-1)
+        return self.return_head(state).squeeze(-1), self.direction_head(state).squeeze(-1)
 
 
 class LSTMModel(RecurrentModel):
@@ -42,25 +42,28 @@ class GRUModel(RecurrentModel):
 
 
 class TransformerModel(nn.Module):
-    """Small Transformer encoder using the last token as the forecast state."""
+    """Small positional Transformer encoder using the last token as forecast state."""
 
     def __init__(
-        self, input_size: int, hidden_size: int, heads: int, layers: int, dropout: float
+        self, input_size: int, hidden_size: int, heads: int, layers: int, dropout: float,
+        max_sequence_length: int = 60,
     ) -> None:
         super().__init__()
         if hidden_size % heads:
             raise ValueError("hidden_size must be divisible by transformer_heads.")
         self.projection = nn.Linear(input_size, hidden_size)
+        self.position = nn.Parameter(torch.zeros(1, max_sequence_length, hidden_size))
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=hidden_size, nhead=heads, dropout=dropout,
-            batch_first=True,
+            dim_feedforward=128, batch_first=True,
         )
         self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=layers)
         self.dropout = nn.Dropout(dropout)
-        self.price_head = nn.Linear(hidden_size, 1)
+        self.return_head = nn.Linear(hidden_size, 1)
         self.direction_head = nn.Linear(hidden_size, 1)
 
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        """Encode the window and return price and direction predictions."""
-        state = self.dropout(self.encoder(self.projection(x))[:, -1, :])
-        return self.price_head(state).squeeze(-1), self.direction_head(state).squeeze(-1)
+        """Encode the window and return return and direction predictions."""
+        projected = self.projection(x)
+        state = self.dropout(self.encoder(projected + self.position[:, :x.size(1), :])[:, -1, :])
+        return self.return_head(state).squeeze(-1), self.direction_head(state).squeeze(-1)

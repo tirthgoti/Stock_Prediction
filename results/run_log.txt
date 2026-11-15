@@ -1,0 +1,75 @@
+AAPL rows=2181 train=1526 validation=327 test=328 train_dates=2018-03-14..2024-04-05 validation_dates=2024-04-08..2025-07-28 test_dates=2025-07-29..2026-11-13
+AAPL fold=1 rows_train=926 rows_validation=185 train_dates=2018-03-14..2021-11-12 validation_dates=2021-11-15..2022-08-10
+AAPL fold=1 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.68166373 final_validation_loss=1.81555593
+AAPL fold=1 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.68262892 final_validation_loss=1.80354607
+AAPL fold=1 model=Transformer epochs_trained=5 early_stopping=True final_train_loss=1.74446658 final_validation_loss=1.82452416
+AAPL fold=2 rows_train=1111 rows_validation=185 train_dates=2018-03-14..2022-08-10 validation_dates=2022-08-11..2023-05-05
+AAPL fold=2 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.69128780 final_validation_loss=1.41787350
+AAPL fold=2 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.68412604 final_validation_loss=1.40918726
+AAPL fold=2 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.98911071 final_validation_loss=1.57711768
+AAPL fold=3 rows_train=1296 rows_validation=185 train_dates=2018-03-14..2023-05-05 validation_dates=2023-05-08..2024-01-31
+AAPL fold=3 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.68279839 final_validation_loss=1.06820804
+AAPL fold=3 model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.67750100 final_validation_loss=1.10047400
+AAPL fold=3 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.76584115 final_validation_loss=1.09441245
+AAPL fold=4 rows_train=1481 rows_validation=185 train_dates=2018-03-14..2024-01-31 validation_dates=2024-02-01..2024-10-24
+AAPL fold=4 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.67453735 final_validation_loss=1.45231819
+AAPL fold=4 model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.68650839 final_validation_loss=1.39694780
+AAPL fold=4 model=Transformer epochs_trained=4 early_stopping=True final_train_loss=1.74499219 final_validation_loss=1.40757203
+AAPL fold=5 rows_train=1666 rows_validation=185 train_dates=2018-03-14..2024-10-24 validation_dates=2024-10-25..2025-07-24
+AAPL fold=5 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.67101380 final_validation_loss=2.23863065
+AAPL fold=5 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.67355586 final_validation_loss=2.24848485
+AAPL fold=5 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.91616110 final_validation_loss=2.24888283
+AAPL final model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.69507017 final_validation_loss=1.51528138
+AAPL final model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.69201944 final_validation_loss=1.51880599
+AAPL final model=Transformer epochs_trained=4 early_stopping=True final_train_loss=1.75271049 final_validation_loss=1.52528501
+AAPL backtest_selected_model=ZeroReturn selection_metric=validation_ReturnRMSE
+MSFT rows=2181 train=1526 validation=327 test=328 train_dates=2018-03-14..2024-04-05 validation_dates=2024-04-08..2025-07-28 test_dates=2025-07-29..2026-11-13
+MSFT fold=1 rows_train=926 rows_validation=185 train_dates=2018-03-14..2021-11-12 validation_dates=2021-11-15..2022-08-10
+MSFT fold=1 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.67033099 final_validation_loss=2.17673743
+MSFT fold=1 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.65082986 final_validation_loss=2.23711848
+MSFT fold=1 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.75005944 final_validation_loss=2.10994750
+MSFT fold=2 rows_train=1111 rows_validation=185 train_dates=2018-03-14..2022-08-10 validation_dates=2022-08-11..2023-05-05
+MSFT fold=2 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.68520289 final_validation_loss=1.72944093
+MSFT fold=2 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.67109770 final_validation_loss=1.73398095
+MSFT fold=2 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=2.08639859 final_validation_loss=1.88586301
+MSFT fold=3 rows_train=1296 rows_validation=185 train_dates=2018-03-14..2023-05-05 validation_dates=2023-05-08..2024-01-31
+MSFT fold=3 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.68767972 final_validation_loss=1.10264432
+MSFT fold=3 model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.67307371 final_validation_loss=1.11213672
+MSFT fold=3 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.83804033 final_validation_loss=1.07693413
+MSFT fold=4 rows_train=1481 rows_validation=185 train_dates=2018-03-14..2024-01-31 validation_dates=2024-02-01..2024-10-24
+MSFT fold=4 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.65845051 final_validation_loss=1.09194565
+MSFT fold=4 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.64962412 final_validation_loss=1.08599001
+MSFT fold=4 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.73580545 final_validation_loss=1.08940375
+MSFT fold=5 rows_train=1666 rows_validation=185 train_dates=2018-03-14..2024-10-24 validation_dates=2024-10-25..2025-07-24
+MSFT fold=5 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.65305919 final_validation_loss=1.65694708
+MSFT fold=5 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.65876679 final_validation_loss=1.67126459
+MSFT fold=5 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.72188798 final_validation_loss=1.64195454
+MSFT final model=LSTM epochs_trained=5 early_stopping=True final_train_loss=1.67133572 final_validation_loss=1.28802124
+MSFT final model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.66626098 final_validation_loss=1.30381333
+MSFT final model=Transformer epochs_trained=7 early_stopping=True final_train_loss=1.70299690 final_validation_loss=1.28248230
+MSFT backtest_selected_model=ZeroReturn selection_metric=validation_ReturnRMSE
+RELIANCE.NS rows=2139 train=1497 validation=320 test=322 train_dates=2018-03-14..2024-04-05 validation_dates=2024-04-08..2025-07-23 test_dates=2025-07-24..2026-11-13
+RELIANCE.NS fold=1 rows_train=908 rows_validation=181 train_dates=2018-03-14..2021-11-17 validation_dates=2021-11-18..2022-08-08
+RELIANCE.NS fold=1 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.69503762 final_validation_loss=1.61890364
+RELIANCE.NS fold=1 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.69686916 final_validation_loss=1.62123758
+RELIANCE.NS fold=1 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.86390586 final_validation_loss=1.65609711
+RELIANCE.NS fold=2 rows_train=1089 rows_validation=181 train_dates=2018-03-14..2022-08-08 validation_dates=2022-08-10..2023-05-05
+RELIANCE.NS fold=2 model=LSTM epochs_trained=5 early_stopping=True final_train_loss=1.67983325 final_validation_loss=1.05213034
+RELIANCE.NS fold=2 model=GRU epochs_trained=5 early_stopping=False final_train_loss=1.68773815 final_validation_loss=1.04787558
+RELIANCE.NS fold=2 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.71532951 final_validation_loss=1.05142254
+RELIANCE.NS fold=3 rows_train=1270 rows_validation=181 train_dates=2018-03-14..2023-05-05 validation_dates=2023-05-08..2024-01-29
+RELIANCE.NS fold=3 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.71139136 final_validation_loss=1.05809820
+RELIANCE.NS fold=3 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.71743688 final_validation_loss=1.04797995
+RELIANCE.NS fold=3 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.82089565 final_validation_loss=1.04748368
+RELIANCE.NS fold=4 rows_train=1451 rows_validation=181 train_dates=2018-03-14..2024-01-29 validation_dates=2024-01-30..2024-10-23
+RELIANCE.NS fold=4 model=LSTM epochs_trained=4 early_stopping=True final_train_loss=1.70358487 final_validation_loss=1.32395291
+RELIANCE.NS fold=4 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.71618153 final_validation_loss=1.32026839
+RELIANCE.NS fold=4 model=Transformer epochs_trained=5 early_stopping=False final_train_loss=1.75139960 final_validation_loss=1.33472389
+RELIANCE.NS fold=5 rows_train=1632 rows_validation=181 train_dates=2018-03-14..2024-10-23 validation_dates=2024-10-24..2025-07-17
+RELIANCE.NS fold=5 model=LSTM epochs_trained=5 early_stopping=False final_train_loss=1.69645716 final_validation_loss=1.24145287
+RELIANCE.NS fold=5 model=GRU epochs_trained=4 early_stopping=True final_train_loss=1.70304014 final_validation_loss=1.24664932
+RELIANCE.NS fold=5 model=Transformer epochs_trained=4 early_stopping=True final_train_loss=1.78126585 final_validation_loss=1.32437074
+RELIANCE.NS final model=LSTM epochs_trained=5 early_stopping=True final_train_loss=1.69479051 final_validation_loss=1.26748967
+RELIANCE.NS final model=GRU epochs_trained=5 early_stopping=True final_train_loss=1.70815358 final_validation_loss=1.27503209
+RELIANCE.NS final model=Transformer epochs_trained=6 early_stopping=True final_train_loss=1.84473746 final_validation_loss=1.25155869
+RELIANCE.NS backtest_selected_model=GRU selection_metric=validation_ReturnRMSE

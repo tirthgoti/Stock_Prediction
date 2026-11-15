@@ -3,16 +3,19 @@ start_date: "2018-01-01"
 end_date: null
 data_dir: "data"
 artifacts_dir: "artifacts"
+results_dir: "results"
 window_size: 60
-target: "Close"
+target: "log_return"
 split_ratios: [0.70, 0.15, 0.15]
 seed: 42
+walk_forward_folds: 5
 training:
-  epochs: 50
+  epochs: 10
+  walk_forward_epochs: 5
   batch_size: 64
   learning_rate: 0.001
   weight_decay: 0.0001
-  patience: 8
+  patience: 3
   scheduler_factor: 0.5
   scheduler_patience: 3
   hidden_size: 64

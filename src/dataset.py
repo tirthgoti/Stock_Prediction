@@ -10,11 +10,11 @@ from torch.utils.data import Dataset
 
 
 class SequenceDataset(Dataset[Tuple[torch.Tensor, torch.Tensor, torch.Tensor]]):
-    """Return a feature window, next close, and next-day direction label."""
+    """Return a feature window, next log return, and direction label."""
 
-    def __init__(self, features: np.ndarray, closes: np.ndarray, window_size: int) -> None:
+    def __init__(self, features: np.ndarray, log_returns: np.ndarray, window_size: int) -> None:
         self.features = torch.tensor(features, dtype=torch.float32)
-        self.closes = torch.tensor(closes, dtype=torch.float32)
+        self.log_returns = torch.tensor(log_returns, dtype=torch.float32)
         self.window_size = window_size
 
     def __len__(self) -> int:
@@ -25,8 +25,8 @@ class SequenceDataset(Dataset[Tuple[torch.Tensor, torch.Tensor, torch.Tensor]]):
         """Build one causal sequence and its two targets."""
         end = index + self.window_size
         x = self.features[index:end]
-        target = self.closes[end]
-        direction = (target > self.closes[end - 1]).float()
+        target = self.log_returns[end]
+        direction = (target > 0).float()
         return x, target, direction
 
 

@@ -1,0 +1,2 @@
+strategy_total_return,strategy_sharpe_ratio,strategy_max_drawdown,trade_count,market_exposure_pct,buy_and_hold_total_return,buy_and_hold_sharpe_ratio,buy_and_hold_max_drawdown
+0.31098549248317076,1.4046044061561367,-0.11260289591914763,31.0,55.893536121673,-0.0866512772192759,-0.2471657881826761,-0.27275013220514344
